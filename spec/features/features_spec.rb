@@ -10,8 +10,10 @@ feature '1. Viewing bookmarks' do
 
   scenario '1.2 Viewing the bookmarks' do
     visit '/bookmarks'
-    expect(page).to have_content "google.com"
-    expect(page).to have_content "facebook.com"
+    expect(page).to have_content "http://www.makersacademy.com"
+    expect(page).to have_content "http://www.askjeeves.com"
+    expect(page).to have_content "http://www.twitter.com"
+    expect(page).to have_content "http://www.google.com"
   end
 end
 
@@ -20,6 +22,6 @@ end
 # I want to add new bookmarks to the list
 feature '2. Adding bookmarks' do
   scenario '2.1 Adding a bookmark' do
-    
+
   end
 end
