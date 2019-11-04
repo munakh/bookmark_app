@@ -35,3 +35,15 @@ As a User
 So that my bookmarks are private
 I want to be the only one accessing my bookmarks
 ```
+
+Database Instructions
+---------------------
+```
+Steps
+1. brew install postgresql
+2. brew services start postgresql
+3. psql postgres
+4. CREATE DATABASE bookmark_manager;
+5. \c bookmark_manager
+6. mysql < 01_create_bookmarks_table.sql (found in db/migrations)
+```
