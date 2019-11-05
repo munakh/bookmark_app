@@ -9,19 +9,13 @@ feature '1. Viewing bookmarks' do
   end
 
   scenario '1.2 Viewing the bookmarks' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+    connection.exec("INSERT INTO bookmarks(url) VALUES('http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmarks(url) VALUES('http://www.twitter.com');")
+    connection.exec("INSERT INTO bookmarks(url) VALUES('http://www.google.com');")
     visit '/bookmarks'
     expect(page).to have_content "http://www.makersacademy.com"
-    expect(page).to have_content "http://www.askjeeves.com"
     expect(page).to have_content "http://www.twitter.com"
     expect(page).to have_content "http://www.google.com"
-  end
-end
-
-# As a User
-# So that I can add items to the list
-# I want to add new bookmarks to the list
-feature '2. Adding bookmarks' do
-  scenario '2.1 Adding a bookmark' do
-
   end
 end
